@@ -28,7 +28,6 @@
     "@adonisjs/shield": "^1.0.8",
     "sqlite3": "^5.0.2"
   },
-  "devDependencies": {},
   "autoload": {
     "App": "./app"
   }

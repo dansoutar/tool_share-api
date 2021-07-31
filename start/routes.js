@@ -13,13 +13,41 @@
 |
 */
 
-/** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+// /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+// const Route = use('Route')
+
+// Route.on('/').render('welcome')
+
+// Route.get('/test', ({ response }) => {
+//     response.json({
+//         "hi": "hello world"
+//     })
+// })
+
+
+
+/**
+|--------------------------------------------------------------------------
+| Brett / Dan
+|--------------------------------------------------------------------------
+ */
+const Database = use('Database')
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+// Add Users
+const addTools = async () => {
+  await Database
+          .table('tools')
+          .insert(
+            {
+              'tool-name': 'Hammer',
+              'tool-price': 10
+            }
+          )
+}
+addTools()
 
-Route.get('/test', ({ response }) => {
-    response.json({
-        "hi": "hello world"
-    })
+
+Route.get('/tools', async () => {
+  return await Database.table('tools').select('*')
 })
