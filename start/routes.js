@@ -1,5 +1,7 @@
 'use strict'
 
+const Database = use('Database');
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -22,4 +24,21 @@ Route.get('/test', ({ response }) => {
     response.json({
         "hi": "hello world"
     })
+})
+
+const addTools = async () => {
+    await Database
+    .table('tools')
+    .insert(
+        {
+            'tool-name':'hammer',
+            'tool-price': 12
+        }
+    )
+}
+
+addTools();
+
+Route.get('/tools', async () => {
+    return await Database.table('tools').select('*');
 })
