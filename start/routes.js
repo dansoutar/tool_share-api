@@ -18,8 +18,4 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-Route.get('/test', ({ response }) => {
-    response.json({
-        "hi": "hello world"
-    })
-})
+Route.get('/test', 'TestController.index');
