@@ -30,9 +30,8 @@ adonis serve --dev
 
 ## Migrations & Seeds
 
-Run the following command to run startup migrations.
+Run the following command to run startup migrations and seeds.
 
 ```bash
-adonis migration:run
-adonis seed
+adonis migration:refresh --seed
 ```
