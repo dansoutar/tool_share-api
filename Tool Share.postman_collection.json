@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "706e0563-ba44-4086-a633-a941c1caddec",
+		"name": "Tool Share",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "tools",
+			"item": [
+				{
+					"name": "Get Tools",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}/tools",
+							"host": [
+								"{{URI}}"
+							],
+							"path": [
+								"tools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tools {id}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}/tools/:id",
+							"host": [
+								"{{URI}}"
+							],
+							"path": [
+								"tools",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "101"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tools",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"description": "name of tool",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"description": "price of tool in cents ($1 = 100)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}/tools",
+							"host": [
+								"{{URI}}"
+							],
+							"path": [
+								"tools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tool",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"description": "name of tool",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1200",
+									"description": "price of tool in cents ($1 = 100)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}/tools/:id",
+							"host": [
+								"{{URI}}"
+							],
+							"path": [
+								"tools",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "101"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tool",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "name of tool",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "",
+									"description": "price of tool in cents ($1 = 100)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}/tools/:id",
+							"host": [
+								"{{URI}}"
+							],
+							"path": [
+								"tools",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "101"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URI}}/",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URI}}/test",
+					"host": [
+						"{{URI}}"
+					],
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URI",
+			"value": "http://127.0.0.1:3333"
+		}
+	]
+}
